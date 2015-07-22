@@ -27,6 +27,11 @@ class GeocodingController < ApplicationController
 
     @longitude = longitude
 
+    @map = "http://maps.googleapis.com/maps/api/staticmap?center=#{@latitude},#{@longitude}&zoom=15&size=600x500&sensor=false"
+
+
+
+
     render("street_to_coords.html.erb")
   end
 end

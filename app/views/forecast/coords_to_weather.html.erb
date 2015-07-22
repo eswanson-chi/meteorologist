@@ -1,24 +1,31 @@
-<h1>Coords &rarr; Weather Results</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Coords   <i class="fa fa-arrow-right"></i>   Weather Results</h1>
+        </div>
 
-<dl>
-  <dt>Latitude</dt>
-  <dd><%= @lat %></dd>
-
-  <dt>Longitude</dt>
-  <dd><%= @lng %></dd>
-
-  <dt>Current Temperature</dt>
-  <dd><%= @current_temperature %></dd>
-
-  <dt>Current Summary</dt>
-  <dd><%= @current_summary %></dd>
-
-  <dt>Outlook for next sixty minutes</dt>
-  <dd><%= @summary_of_next_sixty_minutes %></dd>
-
-  <dt>Outlook for next several hours</dt>
-  <dd><%= @summary_of_next_several_hours %></dd>
-
-  <dt>Outlook for next several days</dt>
-  <dd><%= @summary_of_next_several_days %></dd>
-</dl>
+        <ul class="list-group">
+          <li class="list-group-item"><label>Latitude: </label><p><%= @lat %></p></li>
+          <li class="list-group-item"><label>Longitude: </label><p><%= @lng %></p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Forecast</h1>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><label>Current Temperature: </label><p><%= @current_temperature %></p></li>
+          <li class="list-group-item"><label>Current Summary: </label><p><%= @current_summary %></p></li>
+          <li class="list-group-item"><label>Longitude: </label><p><%= @lng %></p></li>
+          <li class="list-group-item"><label>Outlook for next sixty minutes: </label><p><%= @summary_of_next_sixty_minutes %></p></li>
+          <li class="list-group-item"><label>Outlook for next several hours: </label><p><%= @summary_of_next_several_hours %></p></li>
+          <li class="list-group-item"><label>Outlook for next several days: </label><p><%= @summary_of_next_several_days %></p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

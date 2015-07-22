@@ -15,11 +15,27 @@
   <!-- Connect to Bootstrap Javascript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-
-
-
-
   <%= stylesheet_link_tag    'application', media: 'all' %>
+
+<script>
+  var map;
+function initialize() {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 8,
+    center: {lat: -34.397, lng: 150.644}
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<style>
+#map {
+width: 500px;
+height: 400px;
+}
+</style>
+
 
 </head>
 <body>
@@ -35,37 +51,42 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">
-          <i class="fa fa-tint"></i>
+          <i class="fa fa-bolt"></i>
           Instant Forecast
         </a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select a Search Method<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            </li>
           <li>
             <a href="/street_to_coords/new">
-              <i class="fa fa-book"></i>
-              <span>Street &rarr; Coords</span>
+              <span><i class="fa fa-map-marker"></i> Street   <i class="fa fa-arrow-right"> </i>   <i class="fa fa-crosshairs"></i> Coords</span>
             </a>
           </li>
           <li>
             <a href="/coords_to_weather/new">
-              <i class="fa fa-money"></i>
-              <span>Coords &rarr; Weather</span>
+              <span><i class="fa fa-crosshairs"></i> Coords   <i class="fa fa-arrow-right"></i>   <i class="fa fa-tint"></i> Weather</span>
             </a>
           </li>
           <li>
             <a href="/street_to_weather/new">
-              <i class="fa fa-clock-o"></i>
-              <span>Street &rarr; Weather</span>
+              <span><i class="fa fa-map-marker"></i> Street   <i class="fa fa-arrow-right"></i>   <i class="fa fa-tint"></i> Weather</span>
             </a>
           </li>
+          </ul>
         </ul>
-
       </div><!--/.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
 
 
 

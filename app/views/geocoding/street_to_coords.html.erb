@@ -1,12 +1,28 @@
-<h1>Street &rarr; Coords Results</h1>
 
-<dl>
-  <dt>Street Address</dt>
-  <dd><%= @street_address %></dd>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Street   <i class="fa fa-arrow-right"></i>   Coords Results</h1>
+        </div>
 
-  <dt>Latitude</dt>
-  <dd><%= @latitude %></dd>
-
-  <dt>Longitude</dt>
-  <dd><%= @longitude %></dd>
-</dl>
+        <ul class="list-group">
+          <li class="list-group-item"><label>Street Address: </label><p><%= @street_address %></p></li>
+          <li class="list-group-item"><label>Latitude: </label><p><%= @latitude %></p></li>
+          <li class="list-group-item"><label>Longitude: </label><p><%= @longitude %></p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Map</h1>
+        </div>
+        <div class="panel-body">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

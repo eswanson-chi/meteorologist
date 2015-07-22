@@ -1,10 +1,31 @@
-<h1>Street &rarr; Coords Lookup</h1>
 
-<form action="/street_to_coords">
-  <div>
-    <label for="the_address">Street Address</label>
-    <input type="text" name="user_street_address" id="the_address">
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Street   <i class="fa fa-arrow-right"></i>   Coords Lookup</h1>
+        </div>
+        <div class="panel-body">
+          <form action="/street_to_coords">
+
+            <div class="form-group">
+              <label for="the_address">Enter Street Address</label>
+              <div class="col-sm-10">
+                <input type="text" name="user_street_address" id="the_address">
+              </div>
+              <div><p></p></div>
+
+              <p><div class="col-sm-10">
+                <button class="btn btn-default btn-block">Lookup Coordinates</button>
+              </div></p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+    </div>
   </div>
-
-  <button>Lookup Coordinates</button>
-</form>
+</div>
